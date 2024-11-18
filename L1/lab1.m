@@ -78,3 +78,36 @@ dispersiaEstimata = 1/(length(dataSort)) * sum(a.*((vxc - xindirectmean).^2));
 abatereaStandardEsantionata = sqrt(dispersiaEstimata);
 coeficientVariatie = abatereaStandard / xindirectmean;
 yule = abs((xindirectmean - M0)/(xindirectmean-ME));
+
+
+%% ex 6
+r11 = 0.85;
+r12 = 0.87;
+r13 = 0.88; 
+r21 = 0.93;
+r31 = 0.89;
+r32 = 0.90;
+r41 = 0.92;
+r42 = r41;
+r43 = r41;
+r51 = 0.85;
+r52 = r51; 
+r53 = r51; 
+r61 = 0.91;
+r62 = 0.94;
+r63 = 0.98;
+
+rs1 = r11 * r12 * r13;
+rs2 = r31 * r32;
+rs3 = r41 * r42 * r43;
+rs4 = r51 * r52 * r53;
+rs5 = r61 * r62 * r63;
+rp1 = 1 - (1-rs1)*(1-r21)*(1-rs2);
+rp2 = 1 - (1-rs3)*(1-rs4)*(1-rs5);
+
+rfinal = rp1*rp2;
+
+%% ex 5
+r = 0.985119;
+% r = e^-z*t;
+z = log(r)/-150;
