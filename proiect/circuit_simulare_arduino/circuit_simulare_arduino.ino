@@ -1,4 +1,4 @@
-int timer = 100;
+int timer = 2000;
 boolean circuitOK;
 int rez;
 
